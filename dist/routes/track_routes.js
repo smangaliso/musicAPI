@@ -46,6 +46,7 @@ class TrackRoutes {
                 res.status(500).send();
             }
         }));
+        // UPDATE
         app.put("/tracks/:id", (req, res) => __awaiter(this, void 0, void 0, function* () {
             // Validation
             if (!req.body.name || !req.body.artist) {
@@ -61,6 +62,18 @@ class TrackRoutes {
                     return;
                 }
                 res.json(track);
+            }
+            catch (error) {
+                res.status(500).send();
+            }
+        }));
+        // DELETE
+        app.delete("/tracks/:id", (req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const deletedTrack = yield schema_1.Track.findByIdAndDelete(req.params.id);
+                if (!deletedTrack)
+                    return res.status(404).send();
+                res.status(204).send();
             }
             catch (error) {
                 res.status(500).send();

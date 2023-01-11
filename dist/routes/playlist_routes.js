@@ -49,6 +49,47 @@ class PlaylistRoutes {
                 res.status(500).send();
             }
         }));
+        //update
+        app.put("/playlists/:id", (req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const playlist = yield schema_1.Playlist.findById(req.params.id);
+                if (!playlist) {
+                    res.status(404).send();
+                    return;
+                }
+                // update fields
+                if (req.body.name) {
+                    playlist.name = req.body.name;
+                }
+                if (req.body.creator) {
+                    playlist.creator = req.body.creator;
+                }
+                if (req.body.playtime) {
+                    playlist.playtime = req.body.playtime;
+                }
+                if (req.body.trackList) {
+                    playlist.trackList = req.body.trackList;
+                }
+                // save
+                yield playlist.save();
+                res.json(playlist);
+            }
+            catch (error) {
+                res.status(500).send();
+            }
+        }));
+        // delete
+        app.delete("/playlists/:id", (req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const deletedTrack = yield schema_1.Playlist.findByIdAndDelete(req.params.id);
+                if (!deletedTrack)
+                    return res.status(404).send();
+                res.status(204).send();
+            }
+            catch (error) {
+                res.status(500).send();
+            }
+        }));
     }
 }
 exports.PlaylistRoutes = PlaylistRoutes;

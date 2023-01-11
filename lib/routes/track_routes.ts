@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express";
-import  {Track}  from "../modules/track/schema";
+import { Track } from "../modules/track/schema";
 
 export class TrackRoutes {
   public routes(app: Application) {
@@ -36,7 +36,7 @@ export class TrackRoutes {
         res.status(500).send();
       }
     });
-
+    // UPDATE
     app.put("/tracks/:id", async (req, res) => {
       // Validation
       if (!req.body.name || !req.body.artist) {
@@ -53,6 +53,17 @@ export class TrackRoutes {
           return;
         }
         res.json(track);
+      } catch (error) {
+        res.status(500).send();
+      }
+    });
+
+    // DELETE
+    app.delete("/tracks/:id", async (req, res) => {
+      try {
+        const deletedTrack = await Track.findByIdAndDelete(req.params.id);
+        if (!deletedTrack) return res.status(404).send();
+        res.status(204).send();
       } catch (error) {
         res.status(500).send();
       }
