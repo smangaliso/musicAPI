@@ -45,6 +45,16 @@ Playlists
 
 * `DELETE: localhost:3000/playlist/id`
 
+<h3>Validation</h3>
+
+The API performs basic validation on all requests to ensure that the data is in the correct format and that required fields are present.
+
+<h3>Error handling</h3>
+
+The API returns appropriate HTTP error codes and error messages for all possible errors. It also logs errors to the console for debugging purposes.
+
+<h2>Postman collection</h2>
+
+A Postman collection is included in the repository to demonstrate how to use the API routes. Please import the Music API.postman_collection.json file into Postman to use it.
 
 
-json format for create tracks and playlist resource are in the schema.ts 
