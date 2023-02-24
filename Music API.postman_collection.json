@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "1e4d7c45-cedb-4259-9c36-d30948107e78",
+		"name": "Music API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all tracks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tracks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post tracks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"track1\",\r\n    \"album\":\"mass country\",\r\n    \"artist\":\"John doe\",\r\n    \"duration\": 3,\r\n    \"artwork\": \"www.arteork.co.ga\",\r\n    \"audio\": \"reryyt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/tracks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get track by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tracks/63f875d4a464b3ccd9d49c31",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tracks",
+						"63f875d4a464b3ccd9d49c31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update track",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"lAST TIME\",\r\n    \"album\":\"mass country\",\r\n    \"artist\":\"John doe\",\r\n    \"duration\": 3,\r\n    \"artwork\": \"www.arteork.co.ga\",\r\n    \"audio\": \"reryyt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/tracks/63f875d4a464b3ccd9d49c31",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tracks",
+						"63f875d4a464b3ccd9d49c31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete track",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tracks/63f875d4a464b3ccd9d49c31",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tracks",
+						"63f875d4a464b3ccd9d49c31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all playlists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/playlists",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post playlists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"top songs\",\r\n    \"creator\": \"joe\",\r\n    \"playtime\": 3,\r\n    \"trackList\":[\r\n        {\r\n    \"name\":\"track1\",\r\n    \"album\":\"mass country\",\r\n    \"artist\":\"John doe\",\r\n    \"duration\": 3,\r\n    \"artwork\": \"www.arteork.co.ga\",\r\n    \"audio\": \"reryyt\"\r\n}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/playlists",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update playlist",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"top songs\",\r\n    \"creator\": \"joe\",\r\n    \"playtime\": 3,\r\n    \"trackList\":[\r\n        {\r\n    \"name\":\"track1\",\r\n    \"album\":\"mass country\",\r\n    \"artist\":\"John doe\",\r\n    \"duration\": 3,\r\n    \"artwork\": \"www.arteork.co.ga\",\r\n    \"audio\": \"reryyt\"\r\n}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/playlists/<id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"<id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get playlist by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/playlists/<id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"<id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete playlist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/playlists/<id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"<id>"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
